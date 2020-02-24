@@ -1,0 +1,16 @@
+l=input().split(' ')
+p=len(l)
+ls=[]
+for i in range(len(l)):
+    if i==0:
+        ls.append(min(l))
+        l.remove(min(l))
+    elif i==p-1:
+        ls.append(l[-1])
+    else:
+        for j in l:
+            for k in l:
+                if ls[-1][-1]==j[0] and j[-1]==k[0]:
+                    ls.append(j)
+                    l.remove(j)
+print(ls)
